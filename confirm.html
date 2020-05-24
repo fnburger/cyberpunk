@@ -3,14 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>l_file_reg</title>
+        <title>SSBU</title>
         <link rel="stylesheet" href="layout.css" type="text/css">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="jquery.typeText.js"></script>
+        <script language="javascript" type="text/javascript">
+          $(document).ready(typewriter);
+
+          function typewriter(){
+            $(".printfast").typeText({
+              typeSpeed: 10,
+              lineWait: 10,
+              then:function() {
+
+              }
+            });
+          }
+        </script>
     </head>
     <body>
         <div id="container">
 
+          <h3>Choose a character</h3>
+          <ul class="printfast">
+            <li class="clickable-char">Marth / Lucina</li><div class="content"><p>Just SH Fair</p></div>
+            <li class="clickable-char">Byleth</li><div class="content"><p>Just Dtilt UpB</p>
+          </ul>
 
-
+          <footer>
+            <a class="backbutton" href="/index.html">&#8592;&nbsp;back</a>
+          </footer>
         </div>
     </body>
+    <script language="javascript" type="text/javascript">
+      $(".clickable-char").click(function(){
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    </script>
 </html>
