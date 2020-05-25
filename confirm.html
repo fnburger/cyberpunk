@@ -27,8 +27,8 @@
 
           <h3>Agent Archives</h3>
           <ul class="printfast">
-            <li class="clickable-char">Sage</li><div class="content"><p id="0" class="fill">Lorem ipsum...</p></div>
-            <li class="clickable-char">Viper</li><div class="content"><p id="1" class="fill">Lorem ipsum...</p></div>
+            <li class="clickable-char">Sage</li><div class="content" contenteditable="true"><p id="0" class="fill">Lorem ipsum...</p></div>
+            <li class="clickable-char">Viper</li><div class="content" contenteditable="true"><p id="1" class="fill">Lorem ipsum2...</p></div>
           </ul>
 
           <footer>
@@ -38,31 +38,28 @@
         <iframe id="frmFile" src="cnfrm_dt.txt" style="display: none;"></iframe>
     </body>
     <script language="javascript" type="text/javascript">
+
+      var listofparagraphs = $('.content');
+      /*Click event for clickable agent names */
       $(".clickable-char").click(function(){
         this.classList.toggle("active");
         var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-        /*LoadFile(content);*/
-      });
-
-      /*Initiate Data from file
-
-      function LoadFile(content){
+        /*Set text for each div*/
         var oFrame = document.getElementById("frmFile");
         var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
         while (strRawContents.indexOf("\r") >= 0)
           strRawContents = strRawContents.replace("\r", "");
         var arrLines = strRawContents.split("\n");
-        var abs = document.getElementsByClassName("fill");
         for (var i = 0; i < arrLines.length; i++) {
           var curLine = arrLines[i];
-          alert("Line #" + (i + 1) + " is: '" + curLine + "'");
-          content.innerHTML = curLine;
-    }
-  }*/
+          listofparagraphs[i].innerHTML = curLine;
+        }
+        /*Make div visible/hidden */
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
     </script>
 </html>
