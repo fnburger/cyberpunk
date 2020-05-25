@@ -5,11 +5,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>l_file_reg</title>
         <link rel="stylesheet" href="layout.css" type="text/css">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="jquery.typeText.js"></script>
+        <script language="javascript" type="text/javascript">
+          $(document).ready(Blink());
+
+          function Blink(){
+            setTimeout(function() {
+              // do something
+              $(".blink").show();
+              setTimeout(function() {
+                // do second thing
+                $(".blink").hide();
+                setTimeout(function(){
+                  // do third thing
+                  $(".blink").show();
+                  setTimeout(function(){
+                    //do fourth thing
+                    $(".blink").hide();
+                    setTimeout(function(){
+                      //do fifth thing
+                      $(".blink").show();
+                    }, 100);
+                  }, 300);
+                }, 200);
+              }, 100);
+            }, 50);
+          }
+
+        </script>
     </head>
     <body>
         <div id="container">
 
-
+          <div class="blink">
+              <p>What is this?</p>
+              <br>
+              <p>Yes.</p>
+          </div>
 
         </div>
     </body>
