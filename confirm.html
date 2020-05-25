@@ -49,7 +49,7 @@
         var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
         while (strRawContents.indexOf("\r") >= 0)
           strRawContents = strRawContents.replace("\r", "");
-        var arrLines = strRawContents.split("\n");
+        var arrLines = strRawContents.split("@");
         for (var i = 0; i < arrLines.length; i++) {
           var curLine = arrLines[i];
           listofparagraphs[i].innerHTML = curLine;
