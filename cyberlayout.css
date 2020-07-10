@@ -33,6 +33,19 @@ p{
   color: #e5003b;
 }
 
+strong{
+  letter-spacing: 1px;
+  font-family: meine-schrift;
+  font-size: 19px;
+  color: #e5003b;
+}
+
+details summary::-webkit-details-marker {
+  background: #180c0f;
+  color: #fff;
+  font-size: 100%;
+}
+
 h3{
   letter-spacing: 1px;
   font-family: meine-schrift;
