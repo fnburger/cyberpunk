@@ -5,8 +5,7 @@
 
 body{
   background-color: #180c0f;
-  background: url(noise50.jpg);
-  animation: animate .5s steps(10) infinite;
+
 }
 @keyframes animate
 {
@@ -24,6 +23,14 @@ body{
     width: 500px;
     margin: 0 auto;
     position: relative;
+}
+
+#maintext{
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  background: url(noise50.jpg);
+  animation: animate .4s steps(5) infinite;
 }
 
 p{
